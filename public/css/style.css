@@ -1,0 +1,213 @@
+/* Reset de márgenes y paddings para evitar inconsistencias */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cuerpo de la página */
+body {
+  font-family: 'Arial', sans-serif;  /* Fuente sencilla, limpia */
+  background-color: #fce5b3;        /* Color de fondo suave, café claro */
+  color: #333;                       /* Color de texto oscuro para buena legibilidad */
+  line-height: 1.6;                  /* Mejor espaciado entre líneas */
+}
+
+/* Encabezado */
+header {
+  background-color: #4B2F1D;         /* Color marrón café oscuro */
+  color: #fff;                       /* Texto blanco para contraste */
+  padding: 50px 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  text-transform: uppercase;         /* Letras mayúsculas */
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1.25rem;
+  font-style: italic;                /* Estilo de fuente en cursiva */
+}
+
+/*MENÚ HAMBURGUESA*/
+#menu {
+  width: 35px;
+  height: 30px;
+  margin: 30px 0 20px 20px;
+  cursor: pointer;
+}
+
+.bar {
+  height: 5px;
+  width: 100%;
+  background-color: hsl(30, 50%, 60%);
+  display: block;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+#bar1 {
+  transform: translateY(-4px);
+}
+
+#bar3 {
+  transform: translateY(4px);
+}
+
+.nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.nav li a:hover {
+  color: #efb810;
+  font-size: 19px;
+}
+
+.nav li {
+  list-style: none;
+  padding: 16px 0;
+}
+
+.nav {
+  padding: 0;
+  margin: 0 20px;
+  transition: 0.3s ease;
+  display: none;
+}
+
+.menu-bg,
+#menu-bar {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.menu-bg {
+  width: 160px;
+  height: 330px;
+background: radial-gradient(circle, hsl(30, 50%, 60%), hsl(40, 20%, 40%));
+  transition: all 0.3s ease;
+  padding: 20px 0;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#menu-bar {
+  z-index: 2000;
+}
+
+.change-bg {
+  opacity: 0.8;
+  visibility: visible;
+  transition: opacity 0.2s ease;
+  z-index: 5;
+}
+
+.change .bar {
+  background-color: white;
+}
+
+.change #bar1 {
+  transform: translateY(4px) rotateZ(-45deg);
+}
+
+.change #bar3 {
+  transform: translateY(-6px) rotate(45deg);
+}
+
+.change #bar2 {
+  opacity: 0;
+}
+
+.change {
+  display: block;
+}
+
+/*Sección del mapa*/
+ #map { 
+  height: 400px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#map:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección de productos */
+section {
+  padding: 40px 0;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil alrededor de las cartas */
+  transition: transform 0.3s ease-in-out;
+  background: #cf9d5c;
+}
+
+.card:hover {
+  transform: scale(1.05);  /* Efecto de escala al pasar el ratón */
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Pie de página */
+footer {
+  background-color: #3e2723;         /* El mismo color que la barra de navegación */
+  color: #fff;
+  padding: 20px 0;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* Asegurar que el sitio sea responsivo */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}
