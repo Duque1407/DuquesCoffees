@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horarios - Duque's Coffees</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" href="/img/cafe.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Navegación -->
+    <div id="menu-bar">
+      <div id="menu" onclick="onClickMenu()">
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+      </div>
+      <ul class="nav" id="nav">
+        <li><a href="/vistas/menu.html">Menú</a></li>
+        <li><a href="/vistas/galeria.html">Galería</a></li>
+        <li><a href="/ubicacion">Ubicación</a></li>
+        <li><a href="/vistas/horarios.html">Horarios</a></li>
+      </ul>
+    </div>
+
+    <div class="menu-bg" id="menu-bg"></div>
+
+    <!-- Sección principal -->
+    <header class="text-white text-center py-5">
+      <div class="container">
+        <h1 class="display-4">Horarios de Duque's Coffees</h1>
+        <p class="lead">Descubre cuándo podrás disfrutar de nuestras bebidas.</p>
+      </div>
+    </header>
+
+    <!-- Tabla de Horarios -->
+    <section class="container my-5">
+      <h2 class="text-center mb-4" style="color: #1f1009">
+        <b>Horario de Atención</b>
+      </h2>
+      <div class="row">
+        <!-- Tabla de bebidas para la mañana -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Desayuno</h5>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Día</th>
+                    <th>Horario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Lunes a Viernes</td>
+                    <td>7:00 AM - 11:00 AM</td>
+                  </tr>
+                  <tr>
+                    <td>Sábado</td>
+                    <td>8:00 AM - 11:00 AM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla de bebidas para la tarde -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Almuerzo</h5>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Día</th>
+                    <th>Horario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Lunes a Viernes</td>
+                    <td>12:00 PM - 2:30 PM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Tabla de bebidas para la comida -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Comida</h5>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Día</th>
+                    <th>Horario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Lunes a Viernes</td>
+                    <td>3:00 PM - 5:00 PM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla de bebidas para la noche -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Cena</h5>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Día</th>
+                    <th>Horario</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Lunes a Viernes</td>
+                    <td>6:00 PM - 10:00 PM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h5>Sobre Duque's Coffees</h5>
+            <p>
+              En Duque's Coffees, nos dedicamos a ofrecer el mejor café de la
+              ciudad, hecho con granos seleccionados, y un ambiente acogedor
+              para todos. ¡Ven y disfruta de una experiencia única en cada taza!
+            </p>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <h5>Contacto</h5>
+            <ul class="list-unstyled">
+              <li><strong>Teléfono:</strong> +52 449 123 4567</li>
+              <li><strong>Email:</strong> contacto@duquescoffees.com</li>
+              <li>
+                <strong>Dirección:</strong> Calle Ficticia 123, Aguascalientes,
+                México
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <h5>Síguenos</h5>
+            <div>
+              <a
+                href="https://facebook.com/duquescoffees"
+                class="text-white me-3"
+                target="_blank"
+              >
+                <i class="fab fa-facebook fa-2x"></i>
+              </a>
+              <a
+                href="https://instagram.com/duquescoffees"
+                class="text-white me-3"
+                target="_blank"
+              >
+                <i class="fab fa-instagram fa-2x"></i>
+              </a>
+              <a
+                href="https://twitter.com/duquescoffees"
+                class="text-white me-3"
+                target="_blank"
+              >
+                <i class="fab fa-twitter fa-2x"></i>
+              </a>
+              <a
+                href="https://linkedin.com/company/duquescoffees"
+                class="text-white"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin fa-2x"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-white" />
+        <p class="text-center mt-3">
+          &copy; 2025 Duque's Coffees. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="/js/navegacion.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  </body>
+</html>
