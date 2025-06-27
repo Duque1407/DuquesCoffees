@@ -143,6 +143,44 @@ background: radial-gradient(circle, hsl(30, 50%, 60%), hsl(40, 20%, 40%));
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+#tarjetita .card:hover {
+  transform: none;  /* Eliminar el efecto de escala */
+}
+
+/* Estilo para la galería */
+/* Sección de la galería (sin hover en las tarjetas) */
+#galeria .card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil alrededor de las cartas */
+  background: #cf9d5c;
+}
+
+#galeria .card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+#galeria .card-body {
+  text-align: center;
+}
+
+#galeria .card-body .card-title {
+  font-size: 1.2rem;
+  color: #1f1009;
+}
+
+#galeria .card-body .card-text {
+  color: #777;
+}
+
+/* Eliminar el efecto hover en la galería */
+#galeria .card:hover {
+  transform: none;  /* Eliminar el efecto de escala */
+}
+
+
 /* Sección de productos */
 section {
   padding: 40px 0;
@@ -184,6 +222,56 @@ h2 {
 .card-text {
   font-size: 1rem;
   color: #555;
+}
+
+
+
+
+
+
+
+/* Estilo para las tablas de horarios */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #3e2723;  /* Marrón oscuro para encabezados */
+  color: #fff;  /* Blanco para texto */
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f4f4f4;  /* Color gris claro para filas pares */
+}
+
+table tbody tr:hover {
+  background-color: #efb810;  /* Color destacado al pasar el mouse */
+}
+
+/* Estilo para el encabezado de la página */
+header {
+  background-color: #4B2F1D;  /* Color marrón café oscuro */
+  color: #fff;
+  padding: 50px 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1.25rem;
+  font-style: italic;
 }
 
 /* Pie de página */
