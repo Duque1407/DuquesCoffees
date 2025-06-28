@@ -18,6 +18,7 @@ header {
   background-color: #4B2F1D;         /* Color marrón café oscuro */
   color: #fff;                       /* Texto blanco para contraste */
   padding: 50px 0;
+  box-shadow: 0 0 10px #000;
 }
 
 header h1 {
@@ -224,36 +225,50 @@ h2 {
   color: #555;
 }
 
-
-
-
-
-
-
-/* Estilo para las tablas de horarios */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
+/* Estilos específicos para las tarjetas de horarios */
+#horarios-card {
+  border: 2px solid #4B2F1D;  /* Bordes más marcados, color café oscuro */
+  background-color: #cf9d5c;  /* Fondo más suave y cálido */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
 }
 
-table th, table td {
-  padding: 10px;
+#horarios-card:hover {
+  transform: scale(1.05);  /* Efecto de escala al pasar el ratón */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);  /* Sombra más pronunciada */
+}
+
+#horarios-card .card-body {
+  padding: 20px;
+}
+
+#horarios-card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4B2F1D;  /* Color café oscuro para los títulos */
   text-align: center;
-  border: 1px solid #ddd;
 }
 
-table th {
-  background-color: #3e2723;  /* Marrón oscuro para encabezados */
-  color: #fff;  /* Blanco para texto */
+#horarios-card .table {
+  background-color: #f1dfc4;  /* Fondo blanco para las tablas */
+  border-radius: 5px;
 }
 
-table tbody tr:nth-child(even) {
-  background-color: #f4f4f4;  /* Color gris claro para filas pares */
+#horarios-card .table th,
+#horarios-card .table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #3E1F1B;  /* Bordes */
 }
 
-table tbody tr:hover {
-  background-color: #efb810;  /* Color destacado al pasar el mouse */
+#horarios-card .table th {
+  background-color: #68432e;  /* Color de fondo de los encabezados de las tablas */
+  color: #fff;  /* Texto blanco */
+}
+
+#horarios-card .table tbody tr:hover {
+  background-color: #D3B4A1;  /* Color suave al pasar el ratón por las filas */
 }
 
 /* Estilo para el encabezado de la página */
@@ -279,6 +294,7 @@ footer {
   background-color: #3e2723;         /* El mismo color que la barra de navegación */
   color: #fff;
   padding: 20px 0;
+  box-shadow: 0 0 10px #000;
 }
 
 footer p {
