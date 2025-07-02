@@ -23,6 +23,7 @@ header {
   box-shadow: none;                  /* Eliminar la sombra */
   position: relative;                /* Asegura que no se superponga con otros elementos */
   z-index: 1;                        /* Si hay algún solapamiento con otro contenido */
+  box-shadow: 0 0 10px #000 !important;
 }
 
 header h1 {
@@ -158,13 +159,16 @@ background: radial-gradient(circle, hsl(30, 50%, 60%), hsl(40, 20%, 40%));
   border: none;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil alrededor de las cartas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  /* Sombra sutil alrededor de las cartas */
   background: #cf9d5c;
 }
 
 #galeria .card-img-top {
-  height: 250px;
+  height: 350px;
   object-fit: cover;
+    object-position: top; /* Enfoca la parte superior de la imagen */
+
+
 }
 
 #galeria .card-body {
@@ -178,11 +182,6 @@ background: radial-gradient(circle, hsl(30, 50%, 60%), hsl(40, 20%, 40%));
 
 #galeria .card-body .card-text {
   color: #777;
-}
-
-/* Eliminar el efecto hover en la galería */
-#galeria .card:hover {
-  transform: none;  /* Eliminar el efecto de escala */
 }
 
 /* Sección de productos */
