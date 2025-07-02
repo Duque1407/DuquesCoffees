@@ -11,14 +11,18 @@ body {
   background-color: #fce5b3;        /* Color de fondo suave, café claro */
   color: #333;                       /* Color de texto oscuro para buena legibilidad */
   line-height: 1.6;                  /* Mejor espaciado entre líneas */
+  margin-top: 0%;
 }
 
 /* Encabezado */
 header {
   background-color: #4B2F1D;         /* Color marrón café oscuro */
   color: #fff;                       /* Texto blanco para contraste */
-  padding: 50px 0;
-  box-shadow: 0 0 10px #000;
+  padding: 50px 0;                   /* Eliminar padding adicional en la parte inferior */
+  margin: 0;                         /* Eliminar margen global en el header */
+  box-shadow: none;                  /* Eliminar la sombra */
+  position: relative;                /* Asegura que no se superponga con otros elementos */
+  z-index: 1;                        /* Si hay algún solapamiento con otro contenido */
 }
 
 header h1 {
@@ -224,6 +228,147 @@ h2 {
   color: #555;
 }
 
+
+
+
+
+
+
+
+
+/* Menú de la carta */
+#menu-carta {
+  background-color: #F5F5F5; 
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d4b483;
+  margin: 2rem auto;
+  max-width: 900px;
+  flex-grow: 1;
+}
+
+#menu-carta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(90deg, #A67F58, #E8D2B6, #A67F58);
+}
+
+#menu-carta h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #4E3629;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px dashed #d4b483; 
+  padding-bottom: 15px;
+}
+
+.menu-section {
+  margin-bottom: 2.5rem;
+}
+
+.menu-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #7F5B3C;
+  background-color: #F9F0E7;
+  padding: 10px 15px;
+  border-left: 5px solid #A67F58;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px dashed #d4b483;
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+}
+
+.menu-item .item-info {
+  flex: 1;
+}
+
+.menu-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #131313;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.menu-item h3::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #A67F58;
+}
+
+.description {
+  color: #000000;
+  font-style: italic;
+}
+
+.price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: #A67F58;
+  font-weight: bold;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+/* Items destacados */
+.highlight {
+  background-color: #E8D2B6;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #E8D2B6;
+  position: relative;
+}
+
+.highlight::before {
+  content: "★";
+  color: #f38f2a;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Estilos específicos para las tarjetas de horarios */
 #horarios-card {
   border: 2px solid #4B2F1D;  /* Bordes más marcados, color café oscuro */
@@ -272,9 +417,11 @@ h2 {
 
 /* Estilo para el encabezado de la página */
 header {
-  background-color: #4B2F1D;  /* Color marrón café oscuro */
-  color: #fff;
-  padding: 50px 0;
+  background-color: #4B2F1D;         /* Color marrón café oscuro */
+  color: #fff;                       /* Texto blanco para contraste */
+  padding: 50px 0 20px;              /* Ajusté el padding para el header */
+  box-shadow: none;                  /* Eliminar la sombra */
+  margin-top: 0;                     /* Asegúrate de que no haya margen superior */
 }
 
 header h1 {
@@ -298,6 +445,7 @@ footer {
 
 footer p {
   font-size: 1rem;
+  text-align: justify;
 }
 
 /* Asegurar que el sitio sea responsivo */
