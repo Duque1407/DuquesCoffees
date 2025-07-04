@@ -6,6 +6,24 @@ const port = 8080;
 
 // Middleware de SEGURIDAD y BUENAS PRACTICAS -->
 
+// Si usas Helmet (un middleware para seguridad en Express)
+const helmet = require('helmet');
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    // Elimina o ajusta las políticas CSP aquí
+    defaultSrc: ["'self'"], 
+    scriptSrc: ["'self'"], 
+    // ... otras políticas
+  },
+}));
+
+// Para desactivar completamente la política CSP:
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', '');  // Borra las cabeceras CSP
+  next();
+});
+
+
 // Sirve archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));  // Permite que Express sirva archivos de la carpeta 'public'
 
