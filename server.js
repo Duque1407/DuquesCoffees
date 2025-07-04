@@ -5,9 +5,6 @@ const app = express();              // Inicializa una aplicación de Express
 const port = 8080;                  
 
 // Middleware de SEGURIDAD y BUENAS PRACTICAS -->
-// Helmet: Para protección general con encabezados HTTP de seguridad:
-const helmet = require('helmet');
-app.use(helmet());
 
 // Sirve archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));  // Permite que Express sirva archivos de la carpeta 'public'
