@@ -17,6 +17,10 @@ app.use(helmet.contentSecurityPolicy({
   },
 }));
 
+//compression para mejorar el rendimiento
+const compression = require('compression');
+app.use(compression()); 
+
 // Para desactivar completamente la política CSP:
 app.use((req, res, next) => {
   res.setHeader('Content-Security-Policy', '');  // Borra las cabeceras CSP
