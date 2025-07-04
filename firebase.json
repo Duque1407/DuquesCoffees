@@ -23,7 +23,7 @@
         "destination": "/index.html"
       }
     ],
-    "cleanUrls": true
+    "cleanUrls": false
   },
   "emulators": {
     "functions": {
