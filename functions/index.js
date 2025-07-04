@@ -11,6 +11,65 @@ const {setGlobalOptions} = require("firebase-functions");
 const {onRequest} = require("firebase-functions/https");
 const logger = require("firebase-functions/logger");
 
+const functions = require('firebase-functions');
+const express = require('express');
+const path = require('path');
+const helmet = require('helmet');
+const compression = require('compression');
+
+// Inicializa la app de Express
+const app = express();
+
+// Configuración de seguridad y rendimiento
+app.use(compression());
+app.use(helmet({
+  contentSecurityPolicy: false, // Personaliza esto después según tus necesidades
+  crossOriginEmbedderPolicy: false // Necesario para algunos recursos externos
+}));
+
+// Sirve archivos estáticos desde la carpeta public
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Configuración de rutas
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
+app.get('/menu', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/menu.html'));
+});
+
+app.get('/galeria', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/galeria.html'));
+});
+
+app.get('/ubicacion', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/ubicacion.html'));
+});
+
+app.get('/horarios', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/horarios.html'));
+});
+
+// Manejo de errores 404 (página no encontrada)
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, '../public/404.html'));
+});
+
+// Configuración global de Firebase Functions
+setGlobalOptions({
+  maxInstances: 5, // Ajusta según tráfico esperado (máx 10 para plan Blaze)
+  memory: '256MB'  // Opcional: '128MB', '256MB', '512MB', etc.
+});
+
+// Exporta la app como función de Firebase
+exports.app = functions
+  .runWith({
+    timeoutSeconds: 60,  // Máximo tiempo de ejecución
+    memory: '256MB'     // Memoria asignada
+  })
+  .https.onRequest(app);
+
 // For cost control, you can set the maximum number of containers that can be
 // running at the same time. This helps mitigate the impact of unexpected
 // traffic spikes by instead downgrading performance. This limit is a
