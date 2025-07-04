@@ -37,6 +37,127 @@ header p {
   font-style: italic;                /* Estilo de fuente en cursiva */
 }
 
+/* Sección Hero */
+/* Sección Hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: #5C4033; /* Color de café */
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #3e1d12;
+  margin-bottom: 10px;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #3e1d12;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-family: 'Arial', sans-serif;
+}
+
+.order-btn {
+  background-color: #3e1d12;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.contact-btn {
+  background-color: #d19a53;
+  color: #3E2723;
+  border: 2px solid #3e1d12;
+}
+
+.order-btn:hover {
+  background-color: #d19a53;
+  color: #3E2723;
+  border: 2px solid #3e1d12;
+}
+
+.contact-btn:hover {
+  background-color: #3e1d12;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+/* Imagen */
+.image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+}
+
+/* Divider */
+.divider {
+  margin-top: 40px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .image img {
+    height: auto;
+  }
+}
+
+.divider-cafe {
+    height: 4px;
+    width: 80%;
+    margin: 1.5rem auto;
+    border: none;
+    background-image: 
+        linear-gradient(90deg, transparent, #5C4033, transparent),
+        linear-gradient(90deg, #5C403333, #5C4033, #5C403333);
+    background-blend-mode: overlay;
+    opacity: 0.9;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+}
+
+.divider-cafe:hover {
+    opacity: 1;
+    transform: scaleY(1.5); /* Efecto de "crecimiento" al pasar el mouse */
+}
+
 /*MENÚ HAMBURGUESA*/
 #menu {
   width: 35px;
@@ -149,8 +270,8 @@ background: radial-gradient(circle, hsl(30, 50%, 60%), hsl(40, 20%, 40%));
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-#tarjetita .card:hover {
-  transform: none;  /* Eliminar el efecto de escala */
+#tarjetita:hover {
+  transform: none !important;  /* Eliminar el efecto de escala */
 }
 
 /* Estilo para la galería */
@@ -167,8 +288,6 @@ background: radial-gradient(circle, hsl(30, 50%, 60%), hsl(40, 20%, 40%));
   height: 350px;
   object-fit: cover;
     object-position: top; /* Enfoca la parte superior de la imagen */
-
-
 }
 
 #galeria .card-body {
@@ -199,7 +318,7 @@ h2 {
   border: none;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil alrededor de las cartas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  /* Sombra sutil alrededor de las cartas */
   transition: transform 0.3s ease-in-out;
   background: #cf9d5c;
 }
@@ -224,16 +343,8 @@ h2 {
 
 .card-text {
   font-size: 1rem;
-  color: #555;
+  color: #050505;
 }
-
-
-
-
-
-
-
-
 
 /* Menú de la carta */
 #menu-carta {
@@ -350,29 +461,11 @@ h2 {
   font-size: 1.2rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Estilos específicos para las tarjetas de horarios */
 #horarios-card {
   border: 2px solid #4B2F1D;  /* Bordes más marcados, color café oscuro */
   background-color: #cf9d5c;  /* Fondo más suave y cálido */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);  /* Sombra suave */
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
 }
@@ -389,7 +482,7 @@ h2 {
 #horarios-card .card-title {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #4B2F1D;  /* Color café oscuro para los títulos */
+  color: #3f281a;  /* Color café oscuro para los títulos */
   text-align: center;
 }
 
