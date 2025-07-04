@@ -1,89 +1,212 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.10.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.10.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Duque's Coffees</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" href="/img/cafe.png" type="image/x-icon" />
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <!-- Navegación -->
+    <div id="menu-bar">
+      <div id="menu" onclick="onClickMenu()">
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+      </div>
+      <ul class="nav" id="nav">
+        <li><a href="/menu">Menú</a></li>
+        <li><a href="/galeria">Galería</a></li>
+        <li><a href="/ubicacion">Ubicación</a></li>
+        <li><a href="/horarios">Horarios</a></li>
+      </ul>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <div class="menu-bg" id="menu-bg"></div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+    <!-- Sección principal -->
+    <header class="text-white text-center py-5">
+      <div class="container">
+        <h1 class="display-4">Bienvenido Duque's Coffees</h1>
+        <p class="lead">¡Tu cafetería favorita, ahora al alcance de un clic!</p>
+      </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-center flex-column-reverse flex-md-row">
+          <!-- Contenido de texto -->
+          <div class="col-12 col-md-6 mb-4 mb-md-0 text-center text-md-start">
+            <h1 class="hero-title">El Mejor Café</h1>
+            <p class="hero-subtitle">
+              Haz tu día más agradable con nuestro café único!
+            </p>
+            <p class="hero-description mb-4">
+              Bienvenido a nuestro rincón del café, donde cada trago tiene su
+              historia y cada taza te brinda una buena experiencia.
+            </p>
+            <div
+              class="d-flex gap-3 justify-content-center justify-content-md-start"
+            >
+              <button
+                class="btn order-btn"
+                onclick="location.href='/ubicacion'"
+              >
+                Encuentranos
+              </button>
+              <button
+                class="btn contact-btn"
+                onclick="location.href='/menu'"
+              >
+                Descubre
+              </button>
+            </div>
+          </div>
+          <!-- Imagen -->
+          <div class="col-12 col-md-6">
+            <img
+              src="/img/cafe.png"
+              alt="Coffee cup with splash"
+              class="img-fluid rounded-3"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="divider-cafe mx-auto"
+        style="height: 2px; width: 80%; background: #5c4033; opacity: 0.3"
+      ></div>
+    </section>
+
+    <!-- Sección de productos destacados -->
+    <section class="container my-0 py-4 mb-5">
+      <h2 class="text-center mb-4" style="color: #1f1009">
+        <b>Nuestros Productos Destacados</b>
+      </h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="/img/express.png" class="card-img-top" alt="Café" />
+            <div class="card-body">
+              <h5 class="card-title">Café Espresso</h5>
+              <p class="card-text">
+                El café espresso más delicioso, con todo el sabor que te
+                mereces.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="/img/ILATTE.png" class="card-img-top" alt="Café" />
+            <div class="card-body">
+              <h5 class="card-title">Café Latte</h5>
+              <p class="card-text">
+                Café con leche suave y cremosa, ideal para cualquier hora del
+                día.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="/img/Mocha.png" class="card-img-top" alt="Café" />
+            <div class="card-body">
+              <h5 class="card-title">Café Mocha</h5>
+              <p class="card-text">
+                Una mezcla deliciosa de café, chocolate y crema batida.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+      <div class="container">
+        <div class="row">
+          <!-- Descripción de la empresa -->
+          <div class="col-md-4 mb-3">
+            <h5>Sobre Duque's Coffees</h5>
+            <p>
+              En Duque's Coffees, nos dedicamos a ofrecer el mejor café de la
+              ciudad, hecho con granos seleccionados, y un ambiente acogedor
+              para todos. ¡Ven y disfruta de una experiencia única en cada taza!
+            </p>
+          </div>
+
+          <!-- Contacto -->
+          <div class="col-md-4 mb-3">
+            <h5>Contacto</h5>
+            <ul class="list-unstyled">
+              <li><strong>Teléfono:</strong> +52 449 123 4567</li>
+              <li><strong>Email:</strong> contacto@duquescoffees.com</li>
+              <li>
+                <strong>Dirección:</strong> Calle Ficticia 123, Aguascalientes,
+                México
+              </li>
+            </ul>
+          </div>
+
+          <!-- Redes Sociales -->
+          <div class="col-md-4 mb-3">
+            <h5>Síguenos</h5>
+            <div>
+              <a
+                href="https://facebook.com/duquescoffees"
+                class="text-white me-3"
+                target="_blank"
+              >
+                <i class="fab fa-facebook fa-2x"></i>
+              </a>
+              <a
+                href="https://instagram.com/duquescoffees"
+                class="text-white me-3"
+                target="_blank"
+              >
+                <i class="fab fa-instagram fa-2x"></i>
+              </a>
+              <a
+                href="https://twitter.com/duquescoffees"
+                class="text-white me-3"
+                target="_blank"
+              >
+                <i class="fab fa-twitter fa-2x"></i>
+              </a>
+              <a
+                href="https://linkedin.com/company/duquescoffees"
+                class="text-white"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin fa-2x"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Derechos reservados -->
+        <hr class="border-white" />
+        <p class="text-center mt-3">
+          &copy; 2025 Duque's Coffees. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="/js/navegacion.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
   </body>
 </html>
