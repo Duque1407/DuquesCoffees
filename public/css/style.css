@@ -328,9 +328,8 @@ h2 {
 }
 
 .card-img-top {
-  height: 200px;
+  height: 300px;
   object-fit: cover;
-  object-position: top; /* Enfoca la parte superior de la imagen */
 
 }
 
